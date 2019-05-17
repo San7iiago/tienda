@@ -12,8 +12,6 @@ if($result->num_rows == 1){
     $result2=$conn->query($sql_validation2);
     $row = $result->fetch_assoc();
     $compara = $row["password"];
-    echo $compara ."    ". $pswd;
-
     if (password_verify($pswd, $compara)) {
       echo "<script language='javascript'>alert('Sesion iniciada')</script>";
       header("Refresh:0;url=index.php");
