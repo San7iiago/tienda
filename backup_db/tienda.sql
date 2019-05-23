@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2019 a las 19:07:36
--- Versión del servidor: 10.1.29-MariaDB
--- Versión de PHP: 7.2.0
+-- Tiempo de generación: 23-05-2019 a las 21:59:42
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,21 +42,11 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`item`, `codprod`, `nomprod`, `cantprod`, `pcosto`, `imagen`) VALUES
-(8, '10230015', 'VARILLA CORRUGADA 11 MM X 6 M DIACO', 50, 12920, ''),
-(9, '10230016', 'CHIPA 1/4 DIACO', 200, 2750, ''),
-(10, '10230017', 'TEJA PVC ADRI N 8 MARFIL 2.44 M', 20, 27727, ''),
-(11, '10230018', 'TEJA PVC ADRI N 10 MARFIL 3.05 M', 20, 34748, ''),
-(12, '10230019', 'TEJA PVC ADRI N 12 MARFIL 3.65 M', 20, 41650, ''),
-(13, '10230020', 'TEJA AJONIT AJOVER N 10 CRISTAL 3.05 M', 20, 49266, ''),
-(14, '10230021', 'TEJA AJONIT AJOVER N 8 CRISTAL 2.44 M', 20, 39508, ''),
-(15, '10230022', 'CEMENTO GRIS X 50 KG TEQUENDAMA', 100, 22200, ''),
-(16, '10230023', 'CHIPA 3/8 DIACO', 200, 2750, ''),
-(19, '10230026', 'TEJA TECHOLIT N 8 ETERNIT 2.44 M', 20, 17850, ''),
-(21, '10230028', 'TEJA RURALITA TRAPEZOIDAL ROJA N 10', 9, 39700, ''),
-(22, '10230029', 'TEJA MARCOLITA TIPO ZINC N 12 GERFOR 3.66 M', 12, 38630, ''),
-(23, '10230030', 'TEJA MARCOLITA TIPO ZINC N 10 GERFOR 3.06 M', 10, 33902, ''),
-(24, '10230031', 'TEJA MARCOLITA TIPO ZINC N 8 GERFOR 2.44 M', 9, 25827, ''),
-(25, '10230032', 'ALAMBRE CENTELSA N 14 X 100 M', 6, 73000, '');
+(37, '1', 'BOTELLA DE AGUA 2', 3, 12, 'products/noimage.png'),
+(39, '111', 'AGUA', 12, 2000, 'products/111.jpg'),
+(40, '26582', 'ZAPATOS', 2, 132, 'products/26582.jpg'),
+(43, '263596', 'ROPA', 15, 13333, 'products/263596.jpg'),
+(44, '26582222', 'KLKL', 15, 1233, 'products/26582222.jpg');
 
 -- --------------------------------------------------------
 
@@ -68,18 +58,12 @@ CREATE TABLE `usuarios` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `firstname` varchar(30) COLLATE utf8_bin NOT NULL,
   `lastname` varchar(30) COLLATE utf8_bin NOT NULL,
+  `identi` int(10) NOT NULL,
   `sexo` varchar(1) COLLATE utf8_bin NOT NULL,
   `email` varchar(50) COLLATE utf8_bin NOT NULL,
   `password` varchar(50) COLLATE utf8_bin NOT NULL,
   `photo` varchar(50) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `firstname`, `lastname`, `sexo`, `email`, `password`, `photo`) VALUES
-(6, 'santiago', 'narvaez', 'M', 'santiago@gmail.com', '$2y$10$zwgXBvOOZ0YXU6iFkfQtbu6Gbu6MVaGHigWy46reMk1', 'images/boy.png');
 
 --
 -- Índices para tablas volcadas
@@ -107,13 +91,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
