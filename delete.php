@@ -7,14 +7,15 @@
     
     
     $sql = "DELETE FROM productos WHERE item=$id AND codprod=$cod";
-
-    
-
     $conn ->query($sql);
-    unlink($ruta);
+    
+    if ($ruta != "products/default.png"){
+        unlink($ruta);
+    }
+    
+   
     echo "<script languaje='javascript'>alert('Producto eliminado')
     </script>";
 
     header("refresh:0; url=index.php");
-
 ?>

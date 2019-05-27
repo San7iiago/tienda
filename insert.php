@@ -22,7 +22,7 @@
         $peso = 2000;
         if ($_FILES["foto"]["size"] <= $peso*1024){
             if ($error1==1){
-                $direccion = "products/noimage.png";
+                $direccion = "products/default.png";
             } else {
                 $name_file = $_FILES["foto"]["name"];
 
@@ -37,7 +37,7 @@
             $sql="INSERT INTO productos (codprod,nomprod,cantprod,pcosto,imagen)VALUES('$codigo','$nombre',$cantidad,$costo,'$direccion')";
 
             if ($conn->query($sql)===true) {
-            echo "<script languaje='javascript'>alert('Producto regisrado con exito')</script>";
+            echo "<script languaje='javascript'>alert('Producto registrado con exito')</script>";
             header("Refresh:0;url=index.php");   
             } else {
             echo "Error:".$sql."<br>".$conn->error;
@@ -48,7 +48,7 @@
         }
     } else {
         echo "<script language='javascript'>alert('El producto ya existe')</script>";
-        header("Refresh:0;url=signup.php");
+        header("Refresh:0;url=view_create.php");
     }
 
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2019 a las 21:59:42
+-- Tiempo de generación: 27-05-2019 a las 05:48:56
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -42,11 +42,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`item`, `codprod`, `nomprod`, `cantprod`, `pcosto`, `imagen`) VALUES
-(37, '1', 'BOTELLA DE AGUA 2', 3, 12, 'products/noimage.png'),
-(39, '111', 'AGUA', 12, 2000, 'products/111.jpg'),
-(40, '26582', 'ZAPATOS', 2, 132, 'products/26582.jpg'),
-(43, '263596', 'ROPA', 15, 13333, 'products/263596.jpg'),
-(44, '26582222', 'KLKL', 15, 1233, 'products/26582222.jpg');
+(2, '2658', 'AGUA MINERAL', 32, 1200, 'products/2658.jpg');
 
 -- --------------------------------------------------------
 
@@ -64,6 +60,13 @@ CREATE TABLE `usuarios` (
   `password` varchar(50) COLLATE utf8_bin NOT NULL,
   `photo` varchar(50) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `firstname`, `lastname`, `identi`, `sexo`, `email`, `password`, `photo`) VALUES
+(1, 'santiago', 'narvaez', 1233193777, 'M', 'santiago.28.n@gmail.com', '$2y$10$vkbqa4ArXcB7WNlCEsxF1OZe9PMhZ4PUmhqVW.206kp', 'images/1233193777/1233193777.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -91,13 +94,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
